@@ -57,19 +57,26 @@ def start_from_main_screen():
     if wait_for_any_element([Template(r"rejoin_session.png", record_pos=(0.023, -0.084), resolution=(1520, 720))], timeout=10):
         touch(Template(r"rejoin_button.png", record_pos=(-0.107, 0.063), resolution=(1520, 720)))
     else:
+
         wait_for_any_element([Template(r"play_multiplayer.png", record_pos=(0.194, -0.022), resolution=(1520, 720))], timeout=10)
 
         touch(Template(r"play_multiplayer.png", record_pos=(0.194, -0.022), resolution=(1520, 720)))
+        
+        if exists(Template(r"na_region_button.png", record_pos=(0.437, 0.148), resolution=(2340, 1080))):
+            touch(Template(r"na_region_button.png", record_pos=(0.437, 0.148), resolution=(2340, 1080)))
+       
+        #wait_for_any_element([Template(r"server_settler_rock.png", threshold=0.75, record_pos=(-0.287, -0.093), resolution=(1520, 720))], timeout=10)
+        wait_for_any_element([Template(r"server_craftsmen_pve_medium_eu.png", record_pos=(-0.316, -0.037), resolution=(2340, 1080))], timeout=10)
 
-        wait_for_any_element([Template(r"server_settler_rock.png", threshold=0.75, record_pos=(-0.287, -0.093), resolution=(1520, 720))], timeout=10)
-
-        touch(Template(r"server_settler_rock.png", record_pos=(-0.287, -0.093), resolution=(1520, 720)))
-
-        wait_for_any_element([Template(r"server_settler_rock_info.png", record_pos=(-0.231, -0.174), resolution=(1520, 720))], timeout=10)
+        #touch(Template(r"server_settler_rock.png", record_pos=(-0.287, -0.093), resolution=(1520, 720)))
+        touch(Template(r"server_craftsmen_pve_medium_eu.png", record_pos=(-0.316, -0.037), resolution=(2340, 1080)))
+        #wait_for_any_element([Template(r"server_settler_rock_info.png", record_pos=(-0.231, -0.174), resolution=(1520, 720))], timeout=10)
+        wait_for_any_element([Template(r"server_craftsmen_pve_medium_eu_info.png", record_pos=(-0.231, -0.17), resolution=(2340, 1080))], timeout=10)
 
         wait_for_any_element([Template(r"join_button.png", record_pos=(0.284, 0.178), resolution=(1520, 720))],  timeout=10)
 
         touch(Template(r"join_button.png", record_pos=(0.284, 0.178), resolution=(1520, 720)))
+
     
 def take_the_gift():
     if exists(Template(r"free_gift.png", threshold=0.6499999999999999, rgb=True, target_pos=5, record_pos=(0.384, -0.209), resolution=(1520, 720))):
@@ -106,6 +113,7 @@ finally:
     touch(Template(r"close_bag.png", threshold=0.5999999999999999, target_pos=5, record_pos=(0.447, -0.206), resolution=(1520, 720)))
 
 auto_setup(__file__)
+
 
 
 
